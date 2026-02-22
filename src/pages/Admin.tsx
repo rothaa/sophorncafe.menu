@@ -331,97 +331,99 @@ const Admin: React.FC = () => {
                                 <button className="close-btn" onClick={closeForm}><X size={20} /></button>
                             </div>
 
-                            <form onSubmit={handleSubmit} className="modal-body">
-                                <div className="form-group">
-                                    <label>Name (English) *</label>
-                                    <input className="input" required value={form.nameEn} onChange={e => setForm({ ...form, nameEn: e.target.value })} />
-                                </div>
-                                <div className="form-group">
-                                    <label>Name (Khmer) *</label>
-                                    <input className="input" required value={form.nameKh} onChange={e => setForm({ ...form, nameKh: e.target.value })} />
-                                </div>
-                                <div className="form-group">
-                                    <label>Price (៛) *</label>
-                                    <input type="number" step="100" className="input" required value={form.price} onChange={e => setForm({ ...form, price: e.target.value })} />
-                                </div>
-                                <div className="form-group">
-                                    <label>Category *</label>
-                                    <select className="select" value={form.category} onChange={e => setForm({ ...form, category: e.target.value as Category })}>
-                                        <option value="Hot">Hot</option>
-                                        <option value="Ice">Ice</option>
-                                        <option value="Tea">Tea</option>
-                                        <option value="Frappe">Frappe</option>
-                                        <option value="Smoothie">Smoothie</option>
-                                    </select>
-                                </div>
-
-                                <div className="form-group">
-                                    <label>Drink Image</label>
-                                    <div className="image-mode-tabs">
-                                        <button
-                                            type="button"
-                                            className={`mode-tab ${imageMode === 'url' ? 'active' : ''}`}
-                                            onClick={() => setImageMode('url')}
-                                        >
-                                            <LinkIcon size={14} /> Image URL
-                                        </button>
-                                        <button
-                                            type="button"
-                                            className={`mode-tab ${imageMode === 'file' ? 'active' : ''}`}
-                                            onClick={() => setImageMode('file')}
-                                        >
-                                            <Upload size={14} /> Upload File
-                                        </button>
+                            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', height: '100%', overflow: 'hidden' }}>
+                                <div className="modal-body">
+                                    <div className="form-group">
+                                        <label>Name (English) *</label>
+                                        <input className="input" required value={form.nameEn} onChange={e => setForm({ ...form, nameEn: e.target.value })} />
+                                    </div>
+                                    <div className="form-group">
+                                        <label>Name (Khmer) *</label>
+                                        <input className="input" required value={form.nameKh} onChange={e => setForm({ ...form, nameKh: e.target.value })} />
+                                    </div>
+                                    <div className="form-group">
+                                        <label>Price (៛) *</label>
+                                        <input type="number" step="100" className="input" required value={form.price} onChange={e => setForm({ ...form, price: e.target.value })} />
+                                    </div>
+                                    <div className="form-group">
+                                        <label>Category *</label>
+                                        <select className="select" value={form.category} onChange={e => setForm({ ...form, category: e.target.value as Category })}>
+                                            <option value="Hot">Hot</option>
+                                            <option value="Ice">Ice</option>
+                                            <option value="Tea">Tea</option>
+                                            <option value="Frappe">Frappe</option>
+                                            <option value="Smoothie">Smoothie</option>
+                                        </select>
                                     </div>
 
-                                    {imageMode === 'url' ? (
-                                        <input
-                                            className="input"
-                                            value={form.image}
-                                            onChange={e => setForm({ ...form, image: e.target.value })}
-                                            placeholder="https://example.com/image.jpg"
-                                        />
-                                    ) : (
-                                        <div className="file-upload-container">
-                                            <input
-                                                type="file"
-                                                ref={fileInputRef}
-                                                onChange={handleFileChange}
-                                                accept="image/*"
-                                                style={{ display: 'none' }}
-                                            />
-                                            <div
-                                                className="file-dropzone"
-                                                onClick={() => fileInputRef.current?.click()}
+                                    <div className="form-group">
+                                        <label>Drink Image</label>
+                                        <div className="image-mode-tabs">
+                                            <button
+                                                type="button"
+                                                className={`mode-tab ${imageMode === 'url' ? 'active' : ''}`}
+                                                onClick={() => setImageMode('url')}
                                             >
-                                                {previewUrl ? (
-                                                    <img src={previewUrl} alt="Preview" className="upload-preview" />
-                                                ) : (
-                                                    <>
-                                                        <Upload size={24} className="mb-2" />
-                                                        <span>Click to select image</span>
-                                                    </>
-                                                )}
-                                            </div>
+                                                <LinkIcon size={14} /> Image URL
+                                            </button>
+                                            <button
+                                                type="button"
+                                                className={`mode-tab ${imageMode === 'file' ? 'active' : ''}`}
+                                                onClick={() => setImageMode('file')}
+                                            >
+                                                <Upload size={14} /> Upload File
+                                            </button>
                                         </div>
-                                    )}
-                                </div>
 
-                                <div className="checkboxes">
-                                    <label className="checkbox-label">
-                                        <input type="checkbox" checked={form.isBestSeller} onChange={e => setForm({ ...form, isBestSeller: e.target.checked })} />
-                                        Mark as Best Seller
-                                    </label>
-                                    <label className="checkbox-label">
-                                        <input type="checkbox" checked={form.isOutOfStock} onChange={e => setForm({ ...form, isOutOfStock: e.target.checked })} />
-                                        Mark as Out of Stock
-                                    </label>
-                                    <label className="checkbox-label">
-                                        <input type="checkbox" checked={form.isHidden} onChange={e => setForm({ ...form, isHidden: e.target.checked })} />
-                                        Hide from public view
-                                    </label>
-                                </div>
+                                        {imageMode === 'url' ? (
+                                            <input
+                                                className="input"
+                                                value={form.image}
+                                                onChange={e => setForm({ ...form, image: e.target.value })}
+                                                placeholder="https://example.com/image.jpg"
+                                            />
+                                        ) : (
+                                            <div className="file-upload-container">
+                                                <input
+                                                    type="file"
+                                                    ref={fileInputRef}
+                                                    onChange={handleFileChange}
+                                                    accept="image/*"
+                                                    style={{ display: 'none' }}
+                                                />
+                                                <div
+                                                    className="file-dropzone"
+                                                    onClick={() => fileInputRef.current?.click()}
+                                                >
+                                                    {previewUrl ? (
+                                                        <img src={previewUrl} alt="Preview" className="upload-preview" />
+                                                    ) : (
+                                                        <>
+                                                            <Upload size={24} className="mb-2" />
+                                                            <span>Click to select image</span>
+                                                        </>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
 
+                                    <div className="checkboxes">
+                                        <label className="checkbox-label">
+                                            <input type="checkbox" checked={form.isBestSeller} onChange={e => setForm({ ...form, isBestSeller: e.target.checked })} />
+                                            Mark as Best Seller
+                                        </label>
+                                        <label className="checkbox-label">
+                                            <input type="checkbox" checked={form.isOutOfStock} onChange={e => setForm({ ...form, isOutOfStock: e.target.checked })} />
+                                            Mark as Out of Stock
+                                        </label>
+                                        <label className="checkbox-label">
+                                            <input type="checkbox" checked={form.isHidden} onChange={e => setForm({ ...form, isHidden: e.target.checked })} />
+                                            Hide from public view
+                                        </label>
+                                    </div>
+
+                                </div>
                                 <div className="modal-footer">
                                     <button type="button" className="btn" onClick={closeForm} disabled={isUploading}>Cancel</button>
                                     <button
