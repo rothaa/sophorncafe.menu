@@ -21,7 +21,7 @@ interface StoreContextProps {
 const defaultCafeInfo: CafeInfo = {
     name: 'So Phorn Cafe',
     logo: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=200&auto=format&fit=crop',
-    url: window.location.origin,
+    url: window.location.hostname === 'localhost' ? 'https://sophorncafe-menu.vercel.app' : window.location.origin,
     locationEn: '123 Coffee Street, Phnom Penh',
     locationKh: 'ផ្លូវកាហ្វេ ១២៣ ភ្នំពេញ',
     phone: '+855 12 345 678',

@@ -104,6 +104,26 @@
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
 }
 
+@media (max-width: 600px) {
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+
+    .page-title {
+        font-size: 1.75rem;
+    }
+
+    .search-bar {
+        max-width: 100%;
+    }
+
+    .cat-btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
 .empty-state {
     text-align: center;
     padding: 4rem 1rem;

@@ -77,9 +77,22 @@
 }
 
 @media (max-width: 768px) {
+    .footer {
+        padding: 2rem 0;
+    }
+
     .footer-container {
         flex-direction: column;
         text-align: center;
+        gap: 2rem;
+    }
+
+    .footer-qr {
+        order: -1;
+    }
+
+    .qr-box {
+        padding: 0.5rem;
     }
 
     .logo-section {

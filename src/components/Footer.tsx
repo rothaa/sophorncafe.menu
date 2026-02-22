@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
                     <div className="qr-box">
                         <QRCodeSVG
                             value={cafeInfo.url || window.location.origin}
-                            size={160}
+                            size={140}
                             fgColor="#000000"
                             level="H"
                             includeMargin={false}

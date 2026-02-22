@@ -113,14 +113,41 @@
     }
 }
 
-@media (max-width: 480px) {
-    .best-seller-grid {
-        grid-template-columns: 1fr;
+@media (max-width: 768px) {
+    .hero {
+        min-height: 45vh;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .best-seller-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+
+    .section-padding {
+        padding: 2.5rem 1rem;
+    }
+
+    .btn {
+        padding: 0.6rem 1.25rem;
+        font-size: 0.9rem;
     }
 }

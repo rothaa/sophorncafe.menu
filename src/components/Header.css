@@ -146,10 +146,19 @@
 }
 
 @media (max-width: 768px) {
+    .logo-img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .shop-name {
+        font-size: 1.1rem;
+    }
+
     .desktop-nav {
         display: none;
         position: absolute;
-        top: 70px;
+        top: 60px;
         left: 0;
         right: 0;
         background-color: var(--color-surface);
