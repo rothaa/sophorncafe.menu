@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Battambang:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap');
+
+:root {
+  --color-primary: #3E2723;
+  /* Dark brown */
+  --color-secondary: #5D4037;
+  /* Brown */
+  --color-accent: #8D6E63;
+  /* Light warm brown */
+  --color-background: #FDF9F5;
+  /* Warm off-white/cream */
+  --color-surface: #FFFFFF;
+  /* White */
+  --color-text: #212121;
+  /* Dark grey */
+  --color-text-light: #757575;
+  /* Light grey */
+  --color-border: #E0E0E0;
+
+  --font-heading: 'Outfit', 'Khmer OS Battambang', 'Battambang', sans-serif;
+  --font-body: 'Inter', 'Khmer OS Battambang', 'Battambang', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  margin-top: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: var(--font-body);
+}
+
+.card {
+  background-color: var(--color-surface);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(62, 39, 35, 0.08);
+  /* Soft warm shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(62, 39, 35, 0.12);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.input,
+.textarea,
+.select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.input:focus,
+.textarea:focus,
+.select:focus {
+  border-color: var(--color-accent);
+  outline: 2px solid rgba(141, 110, 99, 0.3);
+}
+
+/* Scrollbar tweaks */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 4px;
+}

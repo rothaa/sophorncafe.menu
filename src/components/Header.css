@@ -1,0 +1,170 @@
+.header {
+    background-color: var(--color-surface);
+    box-shadow: 0 2px 10px rgba(62, 39, 35, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 1rem 0;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.admin-status-label {
+    font-weight: 700;
+    color: var(--color-primary);
+    background: rgba(62, 39, 35, 0.05);
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-accent);
+}
+
+.logo-icon {
+    color: var(--color-primary);
+}
+
+.shop-name {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.desktop-nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--color-text-light);
+    transition: color 0.2s, transform 0.2s;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+.nav-link.active {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-accent);
+    border-radius: 2px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.lang-toggle {
+    background-color: var(--color-secondary);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.lang-toggle:hover {
+    background-color: var(--color-primary);
+    transform: scale(1.05);
+}
+
+.admin-link {
+    color: var(--color-text-light);
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+.admin-link:hover {
+    color: var(--color-primary);
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    color: var(--color-primary);
+}
+
+.icon-btn {
+    background: none;
+    padding: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s, color 0.2s;
+    color: var(--color-text-light);
+}
+
+.icon-btn:hover {
+    background-color: #f5f5f5;
+    color: var(--color-primary);
+}
+
+.logout-btn:hover {
+    color: #d32f2f;
+    background-color: #ffebee;
+}
+
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: var(--color-surface);
+        flex-direction: column;
+        padding: 1rem 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .desktop-nav.open {
+        display: flex;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+}
