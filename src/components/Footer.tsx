@@ -52,9 +52,11 @@ const Footer: React.FC = () => {
                     <p className="qr-title">{language === 'en' ? 'Scan to view our menu' : 'ស្កេនដើម្បីមើលម៉ឺនុយ'}</p>
                     <div className="qr-box">
                         <QRCodeSVG
-                            value={cafeInfo.url}
-                            size={120}
-                            fgColor="var(--color-primary)"
+                            value={cafeInfo.url || window.location.origin}
+                            size={160}
+                            fgColor="#000000"
+                            level="H"
+                            includeMargin={false}
                             ref={qrRef}
                         />
                     </div>
