@@ -46,6 +46,7 @@ const Footer: React.FC = () => {
                             : 'រីករាយជាមួយកាហ្វេល្អបំផុតក្នុងក្រុង។ ទំនើប និងឆ្ងាញ់។'}
                     </p>
                     <p className="copyright">© {new Date().getFullYear()} {cafeInfo.name}. All rights reserved.</p>
+                    <p className="developer-credit">Created by <span className="dev-name">Mao Monyrotha</span></p>
                 </div>
 
                 <div className="footer-qr">

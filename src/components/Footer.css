@@ -36,6 +36,18 @@
 .copyright {
     font-size: 0.875rem;
     color: var(--color-text-light);
+    margin-bottom: 0.25rem;
+}
+
+.developer-credit {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    opacity: 0.8;
+}
+
+.dev-name {
+    color: var(--color-primary);
+    font-weight: 600;
 }
 
 .footer-qr {
